@@ -1,0 +1,32 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    setlocale(LC_ALL,"rus");
+
+    srand(time(0));
+    
+    int count;
+    
+    cin >> count;
+    switch (count)
+    {
+    case 1: {
+        srand(time(0));
+        string pril[14] = { "конченый","мерзкий","идеальный","сумрачный","милый","смешной","мрачный","демонический","великолепный","потрясающий","гадкий","могучий","безсславный","идеальный" };
+        string such[14] = { "упырь","котик","лидер","мракобес","лев","олень","мудрец","негодяй","первопроходец","прохиндей","нелюдь","паук","герой","увалень" };
+        char ch;
+        do
+        {
+            cout << "Кто ты сегодня? Нажми Enter, если хочешь узнать!";
+            ch = getchar();
+            cout << " " << pril[0 + rand() % 14] << " " << such[0 + rand() % 14] << endl;
+        } while (ch == '\n');
+        cout << "GAME OVER\n";
+    }
+    case 2: {
+        cout << "11111111" << endl;
+        return 0;
+    }

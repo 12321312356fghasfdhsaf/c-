@@ -1,0 +1,5 @@
+﻿  Sea_battle_with_bot&manual.cpp
+C:\Users\Ярослав\Desktop\с++\Sea_battle_2_0_with_bot&manual\Sea_battle_with_bot&manual\Sea_battle_with_bot&manual.cpp(20,14): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\Ярослав\Desktop\с++\Sea_battle_2_0_with_bot&manual\Sea_battle_with_bot&manual\Sea_battle_with_bot&manual.cpp(20,18): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\Ярослав\Desktop\с++\Sea_battle_2_0_with_bot&manual\Sea_battle_with_bot&manual\Sea_battle_with_bot&manual.cpp(510,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Sea_battle_with_bot&manual.vcxproj -> C:\Users\Ярослав\Desktop\с++\Sea_battle_2_0_with_bot&manual\Sea_battle_with_bot&manual\x64\Debug\Sea_battle_with_bot&manual.exe

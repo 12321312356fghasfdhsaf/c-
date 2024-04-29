@@ -1,0 +1,89 @@
+// Задание 4. функция карта.
+void the_card(const int razmyer_x, const int razmyer_y, char matrix[7][5])
+{
+
+
+	for (int i = 0; i < razmyer_y; i++)
+	{
+		for (int j = 0; j < razmyer_x; j++)
+		{
+			if (i == 0 || j == 0 || i == razmyer_y - 1 || j == razmyer_x - 1)
+			{
+
+				matrix[i][j] = 47;// ASCII code "/"
+			}
+
+
+			else
+			{
+				matrix[i][j] = 32;// ASCII code " "
+			}
+		}
+	}
+
+
+
+
+
+
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+	const int size_x = 5;
+	const int size_y = 7;
+	char mass[size_y][size_x];
+
+	int mast;
+	char nominal;
+	cout << " масть: 3 - " << (char)3 << " 4 - " << (char)4 << " 5 - " << (char)5 << " 6 - " << (char)6 << endl;
+	cin >> mast;
+	cout << " номинал: a-ace,k-king,q-qeen,j-jack, " << endl;
+	cout << " номинал: 6-10" << endl;
+
+	cin >> nominal;
+
+
+
+
+	if (mast == 3 || mast == 4 || mast == 5 || mast == 6)
+	{
+
+		
+		
+			the_card(size_x, size_y, mass);
+
+			if (nominal==54||nominal==55||nominal==56||nominal==57||nominal==97||nominal==107||nominal==113||nominal==106 )
+			{
+
+
+				mass[1][1] = mast;
+				mass[2][1] = nominal;
+			}
+			else if (nominal == 49)
+			{
+				mass[1][1] = mast;
+				mass[2][1] = 49;
+				mass[2][2] = 48;
+			}
+		
+
+
+
+
+		for (int i = 0; i < size_y; i++)
+		{
+			for (int j = 0; j < size_x; j++)
+			{
+				cout << mass[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+	
+
+
+
+}

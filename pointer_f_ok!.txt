@@ -1,0 +1,206 @@
+
+#include <iostream>
+#include<cstdlib>
+using namespace std;
+#define size 10
+
+enum UserChoice
+{
+    Min = 1,
+    Max = 2,
+    Average = 3
+};
+
+void ini_mass1(int*& mass1)
+{
+    mass1 = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        mass1[i] = rand() % 51;
+        cout << mass1[i] << " ";
+    }
+    cout << endl;
+}
+
+void ini_mass2(int*& mass2)
+{
+    mass2 = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        mass2[i] = rand() % 51;
+        cout << mass2[i] << " ";
+    }
+}
+
+void delete_mass1(int*& mass1)
+{
+    delete[] mass1;
+}
+
+void delete_mass2(int*& mass2)
+{
+    delete[] mass2;
+}
+
+
+int max_element(int*& mass1, int*& mass2)
+{
+    int max = 0;
+    int max1 = mass1[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (max1 < mass1[i])
+        {
+            max1 = mass1[i];
+        }
+    }
+    int max2 = mass2[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (max2 < mass2[i])
+        {
+            max2 = mass2[i];
+        }
+    }
+    if (max1 > max2)
+    {
+        max = max1;
+    }
+    else
+    {
+        max = max2;
+    }
+    return max;
+}
+
+int min_element(int*& mass1, int*& mass2)
+{
+    int min = 0;
+    int min1 = mass1[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (min1 > mass1[i])
+        {
+            min1 = mass1[i];
+        }
+    }
+    int min2 = mass2[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (min2 > mass2[i])
+        {
+            min2 = mass2[i];
+        }
+    }
+    if (min1 < min2)
+    {
+        min = min1;
+    }
+    else
+    {
+        min = min2;
+
+    }
+
+    return min;
+}
+
+int avg(int*& mass1, int*& mass2)
+{
+
+    int sum1 = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum1 += mass1[i];
+    }
+    int avg1 = sum1 / size;
+
+    int sum2 = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum2 += mass2[i];
+    }
+    int avg2 = sum2 / size;
+
+    int avg = (avg1 + avg2) / 2;
+    return avg;
+}
+
+int Action(int*& mass1, int*& mass2, int (*ptr_func)(int*& mass1, int*& mass2))
+{
+    return ptr_func(mass1, mass2);
+
+}
+
+
+
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    srand(time(0));
+    
+    int* mass1;
+    int* mass2;
+
+    ini_mass1(mass1);
+    ini_mass1(mass2);
+
+    int(*ptr_func)(int*& mass1, int*& mass2);
+    int input_UserChoice;
+
+    enum UserChoice userChoice;
+
+    cout << "Your action" << endl;
+    cout << "1-min value" << endl;
+    cout << "2-max value" << endl;
+    cout << "3-avg value" << endl;
+    cin >> input_UserChoice;
+    userChoice = (enum UserChoice)input_UserChoice;
+    switch (userChoice)
+    {
+    case Min:
+    {
+
+        ptr_func = min_element;
+        ptr_func(mass1, mass2);
+        cout << "min value = ";
+        // cout << ptr_func(mass1,mass2);
+        break;
+    }
+
+    case Max:
+    {
+        ptr_func = max_element;
+        ptr_func(mass1, mass2);
+        cout << "max value = ";
+        // cout << ptr_func(mass1,mass2);
+        break;
+    }
+    case Average:
+    {
+        ptr_func = avg;
+        ptr_func(mass1, mass2);
+        cout << "avg value = ";
+        //cout << ptr_func(mass1,mass2);
+        break;
+    }
+
+    }
+
+
+    cout << Action(mass1, mass2, ptr_func);
+
+    delete_mass1(mass1);
+    delete_mass2(mass2);
+
+    cout << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << mass1[i]<<" ";
+        cout << mass2[i]<<" ";
+    }
+
+
+}

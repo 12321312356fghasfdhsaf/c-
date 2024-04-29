@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+
+
+int main()
+{
+	int a = 10;
+	int* ptr_a = &a;
+	int** ptr2 = &ptr_a;
+	int*** ptr3 = &ptr2;
+
+	cout << a << endl;
+	cout << *ptr_a << endl;
+	cout << **ptr2 << endl;
+	cout << ***ptr3 << endl;
+
+	int sizeY = 5;
+	int sizeX = 10;
+
+	int** mass2D = new int* [sizeY];
+
+	for (int i = 0; i < sizeY; ++i)
+	{
+		mass2D[i] = new int[sizeX];
+	}
+
+	for (int i = 0; i < sizeY; ++i)
+	{
+		for (int j = 0; j < sizeX; ++j)
+		{
+			mass2D[i][j] = 0;
+		}
+	}
+
+	for (int i = 0; i < sizeY; ++i)
+	{
+		delete[] mass2D[i];
+	}
+
+	delete[] mass2D;
+}

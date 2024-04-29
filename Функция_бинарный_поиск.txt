@@ -1,0 +1,97 @@
+
+int search_binary(int matrix[], int left, int right, int number)
+{
+    int midd = 0;
+    while (1)
+    {
+        midd = (left + right) / 2;
+        if (number < matrix[midd])
+        {
+            right = midd - 1;
+        }
+        else if (number > matrix[midd])
+        {
+            left = midd + 1;
+        }
+        else
+        {
+            return midd;
+        }
+        if (left > right)
+        {
+            return -1;
+        }
+    }
+}
+
+int main()
+
+{
+    setlocale(LC_ALL, "rus");
+
+    int const size = 100;
+    int mass[size];
+    int number=0;
+    srand(time(0));
+
+    for (int i = 0; i < size; i++)
+    {
+        mass[i] = rand() % 100;
+    }
+    for (int i = 0; i < size; i++)
+    {
+
+        cout << mass[i] << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1; j++)
+        {
+            if (mass[j] > mass[j + 1])
+            {
+                int temp = mass[j];
+                mass[j] = mass[j + 1];
+                mass[j + 1] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1; j++)
+        {
+            if (mass[j] > mass[j + 1])
+            {
+                int temp = mass[j];
+                mass[j] = mass[j + 1];
+                mass[j + 1] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < size; i++)
+    {
+
+        cout << mass[i] << " ";
+    }
+    cout<< endl;
+
+    cin >> number; // считываем ключ
+    int index = 0;
+    index = search_binary(mass, 0, size, number);
+    if (index >= 0)
+    {
+        cout << "число находиться в ячейке " << index << endl;
+    }
+    else
+    {
+        cout << "нет такого числа" << endl;
+    }
+
+
+
+
+
+    
+    
+}

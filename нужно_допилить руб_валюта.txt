@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include <ctime>
+#include <windows.h> 
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+
+	setlocale(LC_ALL, "rus");
+    int choice=1 ;
+    double a;
+    double euro = 98.5, dollars = 91.3, yuans = 15.6;
+    cout << "какую суммы в рублях вы хотите расчитать?" << endl;
+    cin >> a;
+    while (choice)
+    {
+        cout << "euro - нажми 1" << endl;
+        cout << "dollars - нажми 2" << endl;
+        cout << "yuans - нажми 3" << endl;
+        cout << "exit - нажми 4" << endl;
+        cin >> choice;
+        cout << endl;
+
+        switch (choice)
+        {
+        case4:
+            cout << "exit" << endl;
+            break;
+        case0:
+            cout << "in euro" << a / euro << endl<<endl;
+            break;
+        case 2:
+            cout << "in dollars" << a / dollars << endl << endl;
+            break;
+        case 3:
+            cout << "in yuans" << a / yuans << endl << endl;
+            break;
+        default:
+            cout << "exit";
+            break;
+        }
+    }
+
+
+
+}

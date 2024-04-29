@@ -1,0 +1,117 @@
+int const bliny = 10;
+int stopka[bliny] = { 21,3,4,12,6,5,13,10,9,7 };
+
+int lopatka;
+int stop = 0;
+int counter = 0;
+for (int i = 0; i < bliny; i++)
+{
+    cout << stopka[i] << " ";
+}
+cout << "воткни лопатку (введи число из ряда)"<<endl;
+
+cin >> lopatka;
+
+for (int i = 0; i < bliny; i++)
+{
+    if (stopka[i] == lopatka)
+    {
+        stop = stopka[i];
+        
+
+
+    }
+    
+
+}
+for (int i = 0; i < bliny; i++)
+{
+    if (stopka[i] != stop)
+    {
+        counter++;
+    }
+    else
+    {
+        break;
+    }
+}
+/*
+cout << endl;
+for (int i = 0; i < counter; i++)
+{
+    cout << stopka[i] << " ";
+}*/
+
+
+for (int i =0; i <counter+1; i++)
+{
+
+    
+    //for (int j =0; j<counter ; j++)
+    
+        
+
+
+        //if (stopka[j] > stopka[counter])
+        
+
+            //if (stopka[j + 1] != stop)
+            
+
+
+                swap(stopka[i], stopka[counter--]);
+                //counter++;
+            
+
+            
+           // else
+            
+             // break;
+            
+                
+            
+            
+        
+        
+        
+
+    
+   
+
+
+
+/*for (int i = 0; i < bliny; i++)
+{
+    
+    
+        for (int j = 0; j < bliny - 1; j++)
+        {
+            
+
+            if (stopka[j] > stopka[j + 1]) 
+            {
+                if (stopka[j + 1] != stop)
+                {
+
+                    int temp = stopka[j]; // создали дополнительную переменную
+                    stopka[j] = stopka[j + 1]; // меняем местами
+                    stopka[j + 1] = temp; // значения элементов
+
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
+
+        }*/
+    
+}    
+              
+cout << endl;
+cout <<"counter= " <<counter+1 << endl;
+for (int i = 0; i < bliny; i++)
+{
+	cout << stopka[i]<<" ";
+}

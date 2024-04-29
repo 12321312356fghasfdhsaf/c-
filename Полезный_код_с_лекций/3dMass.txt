@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+
+
+int main()
+{
+	
+	int sizeY = 5;
+	int sizeX = 10;
+	int sizeZ = 7;
+
+	int*** pXArr = new int** [sizeY];
+
+	for (int i = 0; i < sizeY; i++)
+	{
+		pXArr[i] = new int* [sizeX];
+		for (int j = 0; j < sizeX; j++)
+		{
+			pXArr[i][j] = new int[sizeZ];
+		}
+	}
+
+	for (int i = 0; i < sizeY; ++i)
+	{
+		for (int j = 0; j < sizeX; ++j)
+		{
+			for (int k = 0; k < sizeZ; ++k)
+			{
+				pXArr[i][j][k] = 0;
+				cout << pXArr[i][j][k] << " ";
+			}			
+			cout << endl;
+		}
+		cout << endl;
+	}
+
+
+	for (int i = 0; i < sizeY; i++)
+	{
+		for (int j = 0; j < sizeX; j++)
+		{
+			delete[]pXArr[i][j];
+		}
+		delete[]pXArr[i];
+	}
+
+	delete[] pXArr;
+}

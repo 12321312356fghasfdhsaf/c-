@@ -1,0 +1,19 @@
+ int begin_hours, begin_minets, begin_sec;
+int end_hours, end_minets, end_sec;
+int begin_day_hours,begin_day_minets;
+cout << "Введите последовательно время начала дня: часы , минуты" << endl;
+cout << "Введите последовательно время, прошедшее с начала рабочего дня: часы , минуты , секунды" << endl;
+cin >> begin_hours >> begin_minets >> begin_sec;
+if (begin_hours >= 25 || begin_minets >= 61 || begin_sec >= 61||end_hours>=25 || end_minets >= 61 || end_sec >= 61)
+{
+    cout << "------------!!!!!!!!не корректно введены данные!!!!!!!!!-------------" << endl;
+    return -1;
+
+}
+/*if (begin_day_hours >= 25 || begin_day_minets >= 61)
+{
+    cout << "------------!!!!!!!!не корректно введены данные!!!!!!!!!-------------" << endl;
+    return -1;
+}
+cout << "wright";
+*/

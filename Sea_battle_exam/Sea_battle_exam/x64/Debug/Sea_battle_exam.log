@@ -1,0 +1,6 @@
+﻿  Sea_battle_exam.cpp
+C:\Users\Ярослав\Desktop\с++\Sea_battle_exam\Sea_battle_exam\Sea_battle_exam.cpp(16,14): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\Ярослав\Desktop\с++\Sea_battle_exam\Sea_battle_exam\Sea_battle_exam.cpp(16,18): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\Ярослав\Desktop\с++\Sea_battle_exam\Sea_battle_exam\Sea_battle_exam.cpp(425,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Ярослав\Desktop\с++\Sea_battle_exam\Sea_battle_exam\Sea_battle_exam.cpp(454,7): warning C4101: ch: неиспользованная локальная переменная
+  Sea_battle_exam.vcxproj -> C:\Users\Ярослав\Desktop\с++\Sea_battle_exam\Sea_battle_exam\x64\Debug\Sea_battle_exam.exe

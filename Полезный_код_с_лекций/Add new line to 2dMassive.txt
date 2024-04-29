@@ -1,0 +1,100 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+void Allocate(int** &mass2D, int sizeY, int sizeX)
+{
+	mass2D = new int* [sizeY];
+
+	for (int i = 0; i < sizeY; ++i)
+	{
+		mass2D[i] = new int[sizeX];
+	}
+
+}
+void fill(int**& mass2D, int sizeY, int sizeX)
+{
+	for (int i = 0; i < sizeY; ++i)
+	{
+		for (int j = 0; j < sizeX; ++j)
+		{
+			mass2D[i][j] = rand() % 101;
+			
+		}
+	}
+	
+}
+
+void display(int**& mass2D, int sizeY, int sizeX)
+{
+	for (int i = 0; i < sizeY; ++i)
+	{
+		for (int j = 0; j < sizeX; ++j)
+		{
+			cout << mass2D[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	cout << endl << endl;
+
+}
+
+void destruct(int**& mass2D, int sizeY)
+{
+	for (int i = 0; i < sizeY; ++i)
+	{
+		delete[] mass2D[i];
+	}
+
+	delete[] mass2D;
+
+}
+
+int** dis(int** mass2D, int sizeY, int sizeX, int index)
+{
+	int** mass = new int* [sizeY + 1];
+	for (int i = 0; i < index; ++i)
+	{
+		mass[i] = mass2D[i];
+	}
+
+	mass[index] = new int[sizeX];
+	for (int i = index + 1; i < sizeY + 1; ++i)
+	{
+		mass[i] = mass2D[i - 1];
+	}
+
+	delete[] mass2D;
+
+	for (int i = 0; i < sizeX; ++i)
+	{
+		mass[index][i] = 0;
+	}
+	
+	return mass;
+}
+int main()
+{
+	srand(time(NULL));
+
+	int sizeY = 5;
+	int sizeX = 10;
+
+	int** mass2D;
+
+	Allocate(mass2D, sizeY, sizeX);
+	fill(mass2D,sizeY,sizeX);
+	display(mass2D,sizeY,sizeX);
+	
+	mass2D = dis(mass2D, sizeY, sizeX, 3);
+	display(mass2D, sizeY+1, sizeX);
+
+
+	
+	destruct(mass2D, sizeY);
+
+}

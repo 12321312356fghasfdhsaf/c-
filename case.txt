@@ -1,0 +1,28 @@
+int number=0;
+int choice,summ=0;
+do
+{
+    summ = summ + number;
+    cout << "выбери 1,2 или 3" << endl;
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+    {
+        number = 1;
+        break;
+    }
+    case 2:
+    {
+        number = 2;
+        break;
+    }
+    case 3:
+    {
+        number = 3;
+        break;
+    }
+    }
+    
+} while (choice != 0);
+cout << summ;

@@ -1,0 +1,3 @@
+﻿  bot_1_version.cpp
+C:\Users\Ярослав\Desktop\с++\Bot_1_version\bot_1_version\bot_1_version.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  bot_1_version.vcxproj -> C:\Users\Ярослав\Desktop\с++\Bot_1_version\bot_1_version\x64\Debug\bot_1_version.exe
